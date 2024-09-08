@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/flightStatusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flight status"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp" />
+
+    <RadioGroup
+        android:id="@+id/searchByGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/flightNumberRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flight number"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/citiesRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cities" />
+    </RadioGroup>
+
+    <include
+        android:id="@+id/flightNumberLayout"
+        layout="@layout/layout_flight_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/citiesLayout"
+        layout="@layout/layout_cities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
+
