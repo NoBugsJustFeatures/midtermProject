@@ -1,1 +1,2 @@
 # midtermProject
+# i love minors
