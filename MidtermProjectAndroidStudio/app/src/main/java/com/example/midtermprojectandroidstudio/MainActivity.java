@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import java.util.Calendar;
+import android.graphics.drawable.AnimationDrawable;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,9 +27,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Dynamic background
+        LinearLayout linearLayout = findViewById(R.id.mainLayout);
+
+        AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
         Log.i(TAG, "onCreate called");
 
-        // Find views by ID
         flightNumberInput = findViewById(R.id.flightNumberInput);
         fromInput = findViewById(R.id.fromInput);
         toInput = findViewById(R.id.toInput);
